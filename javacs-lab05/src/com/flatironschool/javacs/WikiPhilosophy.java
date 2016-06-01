@@ -31,16 +31,15 @@ public class WikiPhilosophy {
 	 */
 	public static void main(String[] args) throws IOException {
 
-
 		String url = "https://en.wikipedia.org/wiki/Java_(programming_language)";
 		String urlPhilosophy = "https://en.wikipedia.org/wiki/Philosophy";
-		boolean validURL = findURL(url, urlPhilosophy);
 
-		if(validURL){ //keep going until we've reached the philosophy page
+		if(findURL(url, urlPhilosophy)){ //means success
 				System.out.println("We've reached the philosophy page.");
 				return;
 		}
-		System.out.println("Unable to reach philosophy page.");
+		//otherwise, not successful
+		System.out.println("Failure: Unable to reach philosophy page.");
 
 	}
 
@@ -64,10 +63,10 @@ public class WikiPhilosophy {
 					Element link = (Element) node; //need to typecast it to access the tag
 					if(link.tagName().equals("a") && link.parent().tagName().equals("p")){
 						visited.add(link.absUrl("href"));
-						if(link.absUrl("href").equals(target)){
-							return true;
+						if(link.absUrl("href").equals(target)){ //absUrl gets an absolute URL from a URL attribute that may be relative
+							return true; //if link equals target, we reached the philosophy page!
 						} else {
-							findURL(link.absUrl("href"), target);
+							findURL(link.absUrl("href"), target); //otherwise, recursive call to try again
 							break;
 						}
 					}
@@ -77,7 +76,7 @@ public class WikiPhilosophy {
 				}
 			}
 		}
-		if(parentheses != 0){
+		if(parentheses != 0){ //incorrect number of parentheses
 			return false;
 		}
 		return true;

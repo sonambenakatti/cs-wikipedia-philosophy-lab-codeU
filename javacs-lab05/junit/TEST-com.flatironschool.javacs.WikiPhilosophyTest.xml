@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="sonam-pc" name="com.flatironschool.javacs.WikiPhilosophyTest" skipped="0" tests="1" time="2.926" timestamp="2016-06-01T20:38:10">
+<testsuite errors="1" failures="0" hostname="sonam-pc" name="com.flatironschool.javacs.WikiPhilosophyTest" skipped="0" tests="1" time="1181.521" timestamp="2016-06-01T20:31:47">
   <properties>
     <property name="java.vendor" value="Oracle Corporation" />
     <property name="env.SYSTEMROOT" value="C:\WINDOWS" />
@@ -96,7 +96,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.6 compiled on June 29 2015" />
     <property name="java.class.path" value="c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\bin;c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\lib\jsoup-1.8.3.jar;c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\lib\junit-4.12.jar;c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\lib\hamcrest-core-1.3.jar;c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05;C:\Program Files (x86)\QuickTime\QTSystem\QTJava.zip;C:\Program Files\apache-ant-1.9.6\lib\ant-launcher.jar;C:\Program Files\apache-ant-1.9.6\lib\ant.jar;C:\Program Files\apache-ant-1.9.6\lib\ant-junit.jar;C:\Program Files\apache-ant-1.9.6\lib\ant-junit4.jar" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.flatironschool.javacs.WikiPhilosophyTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\junit\TEST-com.flatironschool.javacs.WikiPhilosophyTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\junitvmwatcher6284036550363559254.properties propsfile=c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\junit3557917828745508058.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.flatironschool.javacs.WikiPhilosophyTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\junit\TEST-com.flatironschool.javacs.WikiPhilosophyTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\junitvmwatcher936916077515234534.properties propsfile=c:\Sites\cs-wikipedia-philosophy-lab-codeU\javacs-lab05\junit8145995655359255112.properties" />
     <property name="env.PROGRAMW6432" value="C:\Program Files" />
     <property name="ant.file.type.JavaCS" value="file" />
     <property name="env.PROGRAMFILES(X86)" value="C:\Program Files (x86)" />
@@ -141,8 +141,42 @@
     <property name="ant.project.invoked-targets" value="test" />
     <property name="env.PROCESSOR_LEVEL" value="6" />
   </properties>
-  <testcase classname="com.flatironschool.javacs.WikiPhilosophyTest" name="testMain" time="2.717" />
-  <system-out><![CDATA[We've reached the philosophy page.
-]]></system-out>
+  <testcase classname="com.flatironschool.javacs.WikiPhilosophyTest" name="testMain" time="1181.246">
+    <error message="Java heap space" type="java.lang.OutOfMemoryError">java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOfRange(Arrays.java:3664)
+	at java.lang.String.&lt;init&gt;(String.java:207)
+	at java.nio.HeapCharBuffer.toString(HeapCharBuffer.java:567)
+	at java.nio.CharBuffer.toString(CharBuffer.java:1241)
+	at org.jsoup.helper.DataUtil.parseByteData(DataUtil.java:121)
+	at org.jsoup.helper.HttpConnection$Response.parse(HttpConnection.java:603)
+	at org.jsoup.helper.HttpConnection.get(HttpConnection.java:195)
+	at com.flatironschool.javacs.WikiFetcher.fetchWikipedia(WikiFetcher.java:31)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:48)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+	at com.flatironschool.javacs.WikiPhilosophy.findURL(WikiPhilosophy.java:70)
+</error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
